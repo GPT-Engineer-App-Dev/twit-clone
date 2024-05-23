@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Box, Container, Heading, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, VStack, Flex } from "@chakra-ui/react";
 import Tweet from "../components/Tweet";
 import TweetForm from "../components/TweetForm";
 
@@ -22,15 +22,17 @@ const HomePage = () => {
 
   return (
     <Container maxW="container.md" py={8}>
-      <Heading as="h1" mb={8}>
-        Home
-      </Heading>
-      <TweetForm onTweetCreate={handleTweetCreate} />
-      <VStack spacing={4}>
-        {tweets.map((tweet, index) => (
-          <Tweet key={index} content={tweet.content} />
-        ))}
-      </VStack>
+      <Flex direction="column" align="center" width="100%">
+        <Heading as="h1" mb={8}>
+          Home
+        </Heading>
+        <TweetForm onTweetCreate={handleTweetCreate} />
+        <VStack spacing={4} width="100%">
+          {tweets.map((tweet, index) => (
+            <Tweet key={index} content={tweet.content} />
+          ))}
+        </VStack>
+      </Flex>
     </Container>
   );
 };
