@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Flex, Avatar } from "@chakra-ui/react";
 
 const Tweet = ({ content }) => {
   return (
@@ -10,7 +10,14 @@ const Tweet = ({ content }) => {
       mb={4}
       bg="white"
       shadow="md"
+      width="100%"
     >
+      <Flex align="center" mb={2}>
+        <Avatar size="md" name="User" src="https://bit.ly/broken-link" />
+        <Text ml={4} fontWeight="bold">
+          User Name
+        </Text>
+      </Flex>
       <Text>{content}</Text>
     </Box>
   );
